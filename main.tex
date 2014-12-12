@@ -177,7 +177,8 @@ Corso di Laurea in Informatica Magistrale
 	Tratto dal paper \cite{Franz:2009:TRS:1693684.1693699}
 	\begin{itemize}
 		\item Consiste in una generalizzazione di HITS nel contesto dei Linked Data
-		\item The algorithm was evaluated for faceted browsing and filtering semantic relations for a better Linked Data exploration experience
+		\item Permette di valutare al meglio le proprietà delle entità e di filtrare le relazioni semantiche dell'entità stessa presente nella linked data
+%		The algorithm was evaluated for faceted browsing and filtering semantic relations for a better Linked Data exploration experience
 	\end{itemize}
 	Implementazione trovata:
 	\begin{itemize}
@@ -201,19 +202,30 @@ Corso di Laurea in Informatica Magistrale
 	\end{itemize}
 \end{frame}
 
-% % % % % % % % % % % % % % % % % % % % DA FINIRE
-
+% % % % % % % % % % % % % % % % % % % %
 \subsection{PICSS}
 \begin{frame}
 	\frametitle{PICSS}
-	Ranker by Information Content (PICSS We propose our partitioned information 
-	content (PIC)-based semantic similarity measure, called PICSS , which is a 
-	combination of feature- and information content-based approaches. Feature in
-	comune per la similarità
-	
-	 Pesa gli archi con information content e similarità tra feature
+	Trattato nella PhD Thesis di Meymandpour e negli articoli correlati \cite{Meymandpour_ESWC_2014} e \cite{MeymandpourD13}
+	\begin{itemize}
+		\item Tecnica di ranker ottenuta combinando:
+		\begin{itemize}
+			\item \emph{\textbf{P}artitioned \textbf{I}nformation \textbf{C}ontent} : Seleziona una partizione della LOD in base al contesto da analizzare
+			\item \emph{\textbf{S}emantic \textbf{S}imilarity measure} : Pesa gli archi tra feature in base all'information content che quel predicato apporta all'entità (Più viene utilizzato quel predicato meno apporto informativo conterrà)
+		\end{itemize}
+		\item Non sono state trovate implementazioni di questo approccio
+	\end{itemize}
 \end{frame}
 \section{RapidMiner - LOD Extension}
+\begin{frame}
+	\frametitle{RapidMiner Linked Open Data Extension}
+	L'estensione per RapidMiner inerente i LOD sviluppata dalla University of Mannaheim \footnote{Sito di riferimento \url{http://dws.informatik.uni-mannheim.de/en/research/rapidminer-lod-extension/}} permette di utilizzare i seguenti algoritmi per la feature selection sui Linked Open Data :
+	\begin{itemize}
+		\item SHSEL tramite Information Gain
+		\item TSEL tramite Information Gain
+		\item Greedy Top Down
+	\end{itemize}
+\end{frame}
 \subsection{SHSEL - IG}
 \begin{frame}
 	\frametitle{SHSEL - Information Gain}
@@ -230,7 +242,7 @@ Corso di Laurea in Informatica Magistrale
 	University of Mannheim
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Bibliography}
+\begin{frame}[allowframebreaks]{Bibliography}
 	\frametitle{References}
 	\bibliographystyle{alpha}
 	\bibliography{mybib}
