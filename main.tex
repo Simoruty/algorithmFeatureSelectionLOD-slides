@@ -216,30 +216,86 @@ Corso di Laurea in Informatica Magistrale
 		\item Non sono state trovate implementazioni di questo approccio
 	\end{itemize}
 \end{frame}
+
 \section{RapidMiner - LOD Extension}
 \begin{frame}
 	\frametitle{RapidMiner Linked Open Data Extension}
-	L'estensione per RapidMiner inerente i LOD sviluppata dalla University of Mannaheim \footnote{Sito di riferimento \url{http://goo.gl/uoUx1k} permette di utilizzare i seguenti algoritmi per la feature selection sui Linked Open Data :
+	L'estensione per RapidMiner inerente i LOD sviluppata dalla University of Mannaheim \footnote{Sito di riferimento \url{http://goo.gl/uoUx1k}} permette di utilizzare i seguenti algoritmi per la feature selection sui Linked Open Data:
 	\begin{itemize}
+		\item Greedy Top Down\\
+		\item TSEL tramite Information Gain\\
 		\item SHSEL tramite Information Gain
-		\item TSEL tramite Information Gain
-		\item Greedy Top Down
 	\end{itemize}
 \end{frame}
-\subsection{SHSEL - IG}
 \begin{frame}
-	\frametitle{SHSEL - Information Gain}
-	University of Mannheim
-\end{frame}
-\subsection{TSEL - IG}
-\begin{frame}
-	\frametitle{TSEL - Information Gain}
-	University of Mannheim
+	\frametitle{Optimal Feature Selection - Example}
+	\begin{figure}[tbph]
+		\centering
+		\includegraphics[width=1\linewidth]{figure/Mannheim/Opt.png}
+		\label{fig:Opt}
+	\end{figure}
 \end{frame}
 \subsection{Greedy Top Down}
 \begin{frame}
 	\frametitle{Greedy Top Down}
-	University of Mannheim
+	Strategia di ricerca Greedy di tipo top down per la feature selection
+	\begin{itemize}
+		\item Seleziona i nodi più rappresentativi da diversi livelli della gerarchia
+	\end{itemize}
+	\begin{figure}[tbph]
+		\centering
+		\includegraphics[width=1\linewidth]{figure/Mannheim/Greedy_Top_Down.png}
+		\label{fig:GreedyTopDown}
+	\end{figure}
+\end{frame}
+
+\subsection{TSEL - IG}
+\begin{frame}
+	\frametitle{TSEL - Information Gain}
+	Tree-based feature selection tratto da \cite{jeong2013feature}
+	\begin{itemize}
+		\item Seleziona le feature più rappresentative da ogni ramo della gerarchia
+	\end{itemize}
+	\begin{figure}[tbph]
+		\centering
+		\includegraphics[width=1\linewidth]{figure/Mannheim/TSEL.png}
+		\label{fig:TSEL}
+	\end{figure}
+\end{frame}
+
+\subsection{SHSEL - IG}
+\begin{frame}
+	\frametitle{SHSEL - Information Gain \dots}
+	Descritto dal paper \cite{ristoski2014feature} e nel corrispettivo sito \footnote{\url{http://goo.gl/NNlnuE}}
+	\begin{itemize}
+		\item The core idea of our SHSEL approach is to identify features with similar relevance, and select the most valuable abstract features, i.e. features from as high as possible levels of the hierarchy, without losing predictive power.
+		\item In our approach, to measure the similarity of relevance between two nodes, we use standard correlation and information gain measure.
+	\item L'approccio prevede due fasi:
+	\begin{itemize}
+		\item Selezione iniziale
+		\item Pruning
+	\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\dots SHSEL - Information Gain \dots}
+	In the first step, initial SHSEL, we are trying to identify, and filter out the ranges of nodes with similar relevance in each branch of the hierarchy
+	\begin{figure}[tbph]
+		\centering
+		\includegraphics[width=1\linewidth]{figure/Mannheim/SHSEL_Phase1.png}
+		\label{fig:SHSELPhase1}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\dots SHSEL - Information Gain}
+	 In the second step, SHSEL Pruning, we are trying to select only the most valuable features from the previously reduced set, based on their information gain value
+	\begin{figure}[tbph]
+		\centering
+		\includegraphics[width=1\linewidth]{figure/Mannheim/SHSEL_Phase2.png}
+		\label{fig:SHSELPhase2}
+	\end{figure}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[allowframebreaks]{Bibliography}
