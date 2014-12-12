@@ -244,7 +244,8 @@ Corso di Laurea in Informatica Magistrale
 	\end{itemize}
 	\begin{figure}[tbph]
 		\centering
-		\includegraphics[width=1\linewidth]{figure/Mannheim/Greedy_Top_Down.png}
+		\vspace{-0.5cm}
+		\includegraphics[width=0.9\linewidth]{figure/Mannheim/Greedy_Top_Down.png}
 		\label{fig:GreedyTopDown}
 	\end{figure}
 \end{frame}
@@ -258,7 +259,8 @@ Corso di Laurea in Informatica Magistrale
 	\end{itemize}
 	\begin{figure}[tbph]
 		\centering
-		\includegraphics[width=1\linewidth]{figure/Mannheim/TSEL.png}
+		\vspace{-0.2cm}
+		\includegraphics[width=0.9\linewidth]{figure/Mannheim/TSEL.png}
 		\label{fig:TSEL}
 	\end{figure}
 \end{frame}
@@ -268,8 +270,8 @@ Corso di Laurea in Informatica Magistrale
 	\frametitle{SHSEL - Information Gain \dots}
 	Descritto dal paper \cite{ristoski2014feature} e nel corrispettivo sito \footnote{\url{http://goo.gl/NNlnuE}}
 	\begin{itemize}
-		\item The core idea of our SHSEL approach is to identify features with similar relevance, and select the most valuable abstract features, i.e. features from as high as possible levels of the hierarchy, without losing predictive power.
-		\item In our approach, to measure the similarity of relevance between two nodes, we use standard correlation and information gain measure.
+		\item Identifica le feature con rilevanza simile e seleziona le feature astratte migliori (quelle con livello gerarchico più alto, senza perdere potere predittivo)
+		\item La misura di similarità applicata sarà l'information gain
 	\item L'approccio prevede due fasi:
 	\begin{itemize}
 		\item Selezione iniziale
@@ -280,20 +282,27 @@ Corso di Laurea in Informatica Magistrale
 
 \begin{frame}
 	\frametitle{\dots SHSEL - Information Gain \dots}
-	In the first step, initial SHSEL, we are trying to identify, and filter out the ranges of nodes with similar relevance in each branch of the hierarchy
+	\begin{itemize}
+		\item Nella prima fase, in ogni ramo della gerarchia verranno identificati e filtrati i set di nodi con rilevanza simile
+	\end{itemize}
 	\begin{figure}[tbph]
 		\centering
-		\includegraphics[width=1\linewidth]{figure/Mannheim/SHSEL_Phase1.png}
+		\vspace{-0.2cm}
+		\includegraphics[width=0.9\linewidth]{figure/Mannheim/SHSEL_Phase1.png}
 		\label{fig:SHSELPhase1}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
 	\frametitle{\dots SHSEL - Information Gain}
-	 In the second step, SHSEL Pruning, we are trying to select only the most valuable features from the previously reduced set, based on their information gain value
+	\begin{itemize}
+		\item Nella seconda fase, si proveranno a selezionare solo le feature più rilevanti dal subset ottenuto nella fase precedente
+		\item La metrica utilizzata sarà sempre il valore dell'information gain
+	\end{itemize}
 	\begin{figure}[tbph]
 		\centering
-		\includegraphics[width=1\linewidth]{figure/Mannheim/SHSEL_Phase2.png}
+		\vspace{-0.2cm}
+		\includegraphics[width=0.9\linewidth]{figure/Mannheim/SHSEL_Phase2.png}
 		\label{fig:SHSELPhase2}
 	\end{figure}
 \end{frame}
